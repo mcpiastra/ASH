@@ -1,6 +1,10 @@
 ASH: an Automatic pipeline to generate realistic and individualized chronic Stroke volume conduction Head models.
 =========================
 
+<p align="center">
+  <img src="https://github.com/mcpiastra/ASH/blob/master/ash_repo.png" width="500">
+</p>
+
 Description:
 -------
 ASH is a Matlab-pipeline that automatically generates realistic and individualized volume conduction head models of chronic stroke patients, by combining the already existing software SimNIBS, for the mesh generation, and LINDA, for the lesion identification.
