@@ -23,7 +23,13 @@ The four software packages should be then installed in your computer. We refer t
 
 Usage: 
 -------
-In the Matlab script Pipeline_SimNIBS_LINDA.m the main steps necessary to generate the individual and realistic volume conduction head model of a chronic stroke patients (with LINDA and SimNIBS) are implemented:
+Four Matlab scripts are present:
+- ash_pipeline.m (main script)
+- create_lesion_mesh.m (script where the lesion compartment is added to the mesh, i.e., see step 4 in the manuscript)
+- run_tdcs_simulations.m (script where SimNIBS simulations are run)
+- run_analysis.m (script where tDCS results are compared and figures produced)
+
+More in details, these are the main steps necessary to generate the individual and realistic volume conduction head model of a chronic stroke patients (with LINDA and SimNIBS):
 ### Segmentation and meshing of the whole head: 
 The T1w MRI is processed by the SimNIBS software  which gives as output a tetrahedral volumetric mesh with 6 homogeneous and isotropic compartments: scalp, skull, eyes, cerebrospinal fluid (CSF), gray matter and white matter. In particular, we utilize the function headreco with the option cat that leads to the use of SPM12. 
 ### Segmentation of the lesion: 
@@ -31,7 +37,7 @@ Since the segmentation and meshing of the lesion compartment are not performed b
 ### Generation of the final mesh: 
 The volumetric mesh generated in the previous step is modified to incorporate the lesion compartment. First, the coordinates of the lesion mask voxels are identified. Second, the mesh elements whose centroids are within the lesion mask are labeled as “lesion”. Finally, we make sure that the resulting lesion compartment does not contain elements of the scalp, skull or eye compartments.
 
-Furthermore, SimNIBS simulations are performed, once the head model is generated. Two transcranial Direct Current Simulation (tDCS) electrodes were modelled as 3 mm thick, 1 cm x 1 cm elliptical patches. The electrode pairs at C3-Fp2 and the one at C4-Fp1 were selected for the ipsi- and contra-lesional stimulation of the primary motor cortex, respectively.
+Regarding the SimNIBS simulations, for all subjects, two transcranial Direct Current Simulation (tDCS) electrodes were modelled as 3 mm thick, 1 cm x 1 cm elliptical patches. The electrode pairs at C3-Fp2 and the one at C4-Fp1 were selected for the ipsi- and contra-lesional stimulation of the primary motor cortex, respectively.
   
 
 Credits: 
@@ -39,6 +45,7 @@ Credits:
 Contributors are:
 - Maria Carla Piastra, *Department of Cognitive Neuroscience, Donders Institute for Brain, Cognition and Behaviour, Radboud University Nijmegen Medical Center, Nijmegen, The Netherlands*
 - Joris van der Cruijsen, *Department of Rehabilitation, Erasmus MC- University Medical Center Rotterdam, Rotterdam, the Netherlands*
+- Vitoria Piai, *Department of Cognitive Neuroscience, Donders Institute for Brain, Cognition and Behaviour, Radboud University Nijmegen Medical Center, Nijmegen, The Netherlands*
 - Floor EM Jeukens, *Department of Biomechanical Engineering, Delft University of Technology, Delft, the Netherlands*
 - Mana Manoochehri, *Department of Biomechanical Engineering, Delft University of Technology, Delft, the Netherlands*
 - Alfred C Schouten, *Department of Biomechanical Engineering, Delft University of Technology, Delft, the Netherlands and Department of Biomechanical Engineering, University of Twente, Enschede, The Netherlands*
